@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff8f3">
+<title>For Aysha ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fff8f2;
+  --pink: #f8e1df;
+  --rose: #c87582;
+  --darkrose: #995461;
+  --brown: #59433e;
+  --muted: #947d76;
+  --white: #fffdfb;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--brown);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+button { font: inherit; }
+
+a { color: inherit; text-decoration: none; }
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--rose);
+  z-index: 1000;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 7%;
+  background: rgba(255,248,242,.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,117,130,.13);
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  color: var(--darkrose);
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--darkrose); }
+
+.music-button {
+  border: 1px solid #e8c7c6;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background: var(--white);
+  color: var(--darkrose);
+  cursor: pointer;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.music-button:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 90px 22px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%, #fffdfb 0%, transparent 58%),
+    linear-gradient(145deg, #fff8f2, #fbe9e5);
+}
+
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+  animation: appear 1.2s ease both;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  color: var(--rose);
+  margin-bottom: 24px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(48px, 9vw, 92px);
+  line-height: 1.07;
+  margin-bottom: 22px;
+}
+
+h1 em, h2 em { color: var(--rose); }
+
+.hero-sub {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 420px;
+  margin: 0 auto 32px;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 14px 25px;
+  background: var(--darkrose);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.primary-button:hover {
+  background: var(--rose);
+  transform: translateY(-3px);
+}
+
+.heart-decoration {
+  position: absolute;
+  color: #d69aa0;
+  opacity: .45;
+  animation: float 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.h1 { top: 15%; left: 13%; font-size: 30px; }
+.h2 { top: 26%; right: 12%; font-size: 22px; animation-delay: -2s; }
+.h3 { bottom: 18%; left: 19%; font-size: 20px; animation-delay: -1s; }
+.h4 { bottom: 22%; right: 16%; font-size: 32px; animation-delay: -3s; }
+
+section {
+  padding: 95px 22px;
+}
+
+.section-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  font-size: clamp(36px, 6vw, 55px);
+  margin-bottom: 14px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.memories { background: var(--white); }
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.memory-card {
+  padding: 27px 23px;
+  background: #fff8f3;
+  border: 1px solid #f1dfd8;
+  border-radius: 17px;
+  transition: .3s;
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #8d5b4d0c;
+}
+
+.memory-number {
+  color: var(--rose);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+}
+
+.memory-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.memory-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+
+.memory-symbol {
+  font-size: 23px;
+  color: var(--rose);
+  margin-bottom: 17px;
+}
+
+.apology {
+  background: linear-gradient(145deg, #f9e8e5, #fff5ef);
+}
+
+.apology-box {
+  max-width: 680px;
+  margin: auto;
+  text-align: center;
+  padding: 45px clamp(22px, 7vw, 65px);
+  background: rgba(255,253,251,.75);
+  border: 1px solid #efd6d2;
+  border-radius: 23px;
+}
+
+.apology-box h2 {
+  font-size: clamp(37px, 6vw, 55px);
+  line-height: 1.2;
+}
+
+.apology-box p {
+  color: #806a63;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.apology-box .emphasis {
+  color: var(--darkrose);
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.7;
+  margin: 27px 0;
+}
+
+.growth { background: var(--white); }
+
+.growth-list {
+  max-width: 650px;
+  margin: auto;
+}
+
+.growth-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+  padding: 22px 0;
+  border-bottom: 1px solid #f0e3dc;
+}
+
+.growth-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #fae9e5;
+  color: var(--darkrose);
+  font-size: 18px;
+}
+
+.growth-item h3 {
+  font-size: 23px;
+  margin: 0 0 7px;
+}
+
+.growth-item p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+
+.letter-section {
+  background: linear-gradient(160deg, #fff8f2, #f9e6e2);
+  text-align: center;
+}
+
+.envelope {
+  max-width: 590px;
+  margin: auto;
+  padding: 40px 30px;
+  background: #fffdfb;
+  border: 1px solid #efd9d3;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px #8c5d4b0c;
+}
+
+.envelope-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.envelope h2 { font-size: 39px; }
+
+.letter {
+  display: none;
+  text-align: left;
+  margin-top: 28px;
+  padding-top: 25px;
+  border-top: 1px solid #f0e1da;
+  animation: appear .7s ease both;
+}
+
+.letter.open { display: block; }
+
+.letter p {
+  color: #806b63;
+  font-size: 13px;
+  line-height: 2.1;
+  margin-bottom: 18px;
+}
+
+.signature {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--darkrose) !important;
+  font-size: 21px !important;
+}
+
+.future {
+  background: var(--white);
+  text-align: center;
+}
+
+.future-inner {
+  max-width: 680px;
+  margin: auto;
+}
+
+.future h2 {
+  font-size: clamp(38px, 6vw, 57px);
+}
+
+.future p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.secondary-button {
+  padding: 13px 20px;
+  border: 1px solid #e5c7c4;
+  background: #fff8f3;
+  color: var(--darkrose);
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.secondary-button:hover {
+  background: var(--pink);
+}
+
+#choice-message {
+  margin-top: 23px;
+  color: var(--darkrose);
+  font-size: 13px;
+  min-height: 24px;
+}
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  background: #fff4ed;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+}
+
+footer .footer-heart {
+  color: var(--rose);
+  font-size: 19px;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 500;
+  pointer-events: none;
+  color: var(--rose);
+  opacity: 0;
+  animation: rise 5s linear forwards;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes rise {
+  0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+  15% { opacity: .55; }
+  85% { opacity: .4; }
+  100% { opacity: 0; transform: translateY(-105vh) rotate(30deg); }
+}
+
+@media (max-width: 700px) {
+  nav { padding: 13px 5%; }
+  .nav-links { display: none; }
+  .hero { min-height: 83vh; padding: 75px 22px; }
+  section { padding: 72px 20px; }
+  .memory-grid { grid-template-columns: 1fr; }
+  .memory-card { padding: 25px; }
+  .apology-box { padding: 35px 22px; }
+  .h1 { left: 7%; }
+  .h2 { right: 7%; }
+  .h3 { left: 9%; }
+  .h4 { right: 8%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <a class="logo" href="#home">for Aysha ♡</a>
+
+  <div class="nav-links">
+    <a href="#memories">Memories</a>
+    <a href="#apology">My apology</a>
+    <a href="#letter">A letter</a>
+  </div>
+
+  <button class="music-button" id="musicBtn" type="button">
+    ♡ Play music
+  </button>
+</nav>
+
+<!--
+  MUSIC SETUP:
+  Put bgm.mp3 in the SAME folder as this index.html.
+  The music starts only after the visitor presses Play music.
+-->
+<audio id="bgm" loop preload="auto">
+  <source src="./bgm.mp3" type="audio/mpeg">
+</audio>
+
+<header class="hero" id="home">
+  <span class="heart-decoration h1">♡</span>
+  <span class="heart-decoration h2">✧</span>
+  <span class="heart-decoration h3">♡</span>
+  <span class="heart-decoration h4">୨୧</span>
+
+  <div class="hero-content">
+    <div class="eyebrow">A little story, just for you</div>
+
+    <h1>For you,<br><em>my Aysha.</em></h1>
+
+    <p class="hero-sub">
+      From your stupid, with a heart that has a lot to say
+      and a lot to make right.
+    </p>
+
+    <a href="#memories" class="primary-button">
+      Come, let me tell you something ♡
+    </a>
+  </div>
+</header>
+
+<section class="memories" id="memories">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="eyebrow">Little things, big feelings</div>
+      <h2>Things I <em>remember.</em></h2>
+      <p>Some moments stay with you, even when everything gets difficult.</p>
+    </div>
+
+    <div class="memory-grid">
+      <article class="memory-card">
+        <div class="memory-symbol">♡</div>
+        <div class="memory-number">01 / A LITTLE MEMORY</div>
+        <h3>Your headband</h3>
+        <p>
+          That headband you gave me. It might seem like a small thing,
+          but it became one of those little memories of you that I
+          carry with me.
+        </p>
+      </article>
+
+      <article class="memory-card">
+        <div class="memory-symbol">✿</div>
+        <div class="memory-number">02 / THE LITTLE THINGS</div>
+        <h3>The way you care</h3>
+        <p>
+          You do so much, sometimes in ways that words can't explain.
+          I don't want to take your care, your patience, or your love
+          for granted.
+        </p>
+      </article>
+
+      <article class="memory-card">
+        <div class="memory-symbol">☾</div>
+        <div class="memory-number">03 / AFTER MIDNIGHT</div>
+        <h3>Our long talks</h3>
+        <p>
+          Those weekend conversations that went on until 4 AM.
+          The way time disappeared while we talked. Those moments
+          mean something to me.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="apology" id="apology">
+  <div class="section-inner">
+    <div class="apology-box">
+      <div class="eyebrow">The part I need to say</div>
+
+      <h2>I'm sorry, <em>Aysha.</em></h2>
+
+      <p>
+        I need to be honest about what I did. I kissed someone else,
+        and it happened more than once. I know that was my choice,
+        and I know I hurt you.
+      </p>
+
+      <p>
+        I won't make excuses, blame circumstances, or expect you to
+        pretend it didn't happen. You deserved honesty and loyalty
+        from me. I understand that my actions damaged your trust.
+      </p>
+
+      <p class="emphasis">
+        "Being sorry doesn't undo the hurt.
+        I have to take responsibility for it."
+      </p>
+
+      <p>
+        I care about you, and I wish I had made better choices.
+        I can't demand another chance, and I can't rush your healing.
+        You have every right to feel what you feel.
+      </p>
+
+      <p>
+        If I want to be a better person, I need to prove that through
+        consistent actions, honesty, and respect — not just a beautiful
+        website or promises made in an emotional moment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="growth" id="growth">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="eyebrow">Not just words</div>
+      <h2>What I want to <em>grow into.</em></h2>
+      <p>Real change is something I have to practise every day.</p>
+    </div>
+
+    <div class="growth-list">
+      <div class="growth-item">
+        <div class="growth-icon">♡</div>
+        <div>
+          <h3>Honesty</h3>
+          <p>
+            Being truthful even when the truth is uncomfortable.
+            No hiding things and no half-truths.
+          </p>
+        </div>
+      </div>
+
+      <div class="growth-item">
+        <div class="growth-icon">✿</div>
+        <div>
+          <h3>Loyalty</h3>
+          <p>
+            Making choices that respect our relationship, our boundaries,
+            and the commitment I choose to make.
+          </p>
+        </div>
+      </div>
+
+      <div class="growth-item">
+        <div class="growth-icon">☁</div>
+        <div>
+          <h3>Patience</h3>
+          <p>
+            Understanding that trust takes time. I won't pressure you
+            to forgive me or make a decision before you're ready.
+          </p>
+        </div>
+      </div>
+
+      <div class="growth-item">
+        <div class="growth-icon">🌷</div>
+        <div>
+          <h3>Becoming better</h3>
+          <p>
+            I want to keep building myself into someone whose actions
+            match his words — for my own sake as well as for the people
+            I care about.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="letter-section" id="letter">
+  <div class="section-inner">
+    <div class="section-heading">
+      <div class="eyebrow">Open whenever you're ready</div>
+      <h2>A letter for <em>you.</em></h2>
+      <p>No rush. Take your time.</p>
+    </div>
+
+    <div class="envelope">
+      <div class="envelope-icon">💌</div>
+      <h2>Dear Aysha,</h2>
+      <p style="color:var(--muted);font-size:12px;line-height:1.8">
+        There are things I wish I could say properly.
+      </p>
+
+      <button class="primary-button" id="letterBtn" type="button">
+        Open your letter ♡
+      </button>
+
+      <div class="letter" id="letterContent">
+        <p>Hey, my Aysha,</p>
+
+        <p>
+          I don't even know how to start this without wishing I could
+          go back and make different choices. But I know I can't change
+          what happened, and I won't pretend that I can.
+        </p>
+
+        <p>
+          You've been someone special to me. I remember the little
+          things, the talks that lasted until morning, and the way you
+          cared for me. I don't want those memories to become a reason
+          to dismiss the pain I caused you.
+        </p>
+
+        <p>
+          I want to grow up, become successful, and build a life I'm
+          proud of. I have things I want to achieve, and I want to
+          become a better man along the way. I hope that one day,
+          if we both still want that future, I can show you how much
+          I've grown through the way I live, not just what I say.
+        </p>
+
+        <p>
+          But I know that future can't be decided by me alone.
+          You deserve to make your own choice, without guilt or pressure.
+          If you need time, I'll respect that. If you want to talk,
+          I'll listen.
+        </p>
+
+        <p>
+          I'm sorry for hurting you, Aysha. Thank you for the good
+          moments we've shared. Whatever happens next, I want to handle
+          it with more honesty and maturity than I did before.
+        </p>
+
+        <p class="signature">— Your stupid ♡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="future" id="future">
+  <div class="future-inner">
+    <div class="eyebrow">Whatever comes next</div>
+
+    <h2>There's no rush, <em>my girl.</em></h2>
+
+    <p>
+      I hope we get the chance to understand each other better.
+      I hope I can show you real change. But your feelings matter,
+      and you don't owe me an answer just because I made this.
+    </p>
+
+    <p>
+      If you want to talk, I'll be here to listen.
+      If you need time, I'll respect that too.
+    </p>
+
+    <div class="choice-buttons">
+      <button class="primary-button" id="talkBtn" type="button">
+        I'm willing to talk ♡
+      </button>
+
+      <button class="secondary-button" id="timeBtn" type="button">
+        I need some time
+      </button>
+    </div>
+
+    <p id="choice-message" aria-live="polite"></p>
+    <p style="font-family:'Playfair Display',serif;font-style:italic">
+      No pressure. Just honesty.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-heart">♡</div>
+  <p>
+    Made with care, for Aysha.<br>
+    From your stupid, always learning.
+  </p>
+</footer>
+
+<script>
+const bgm = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
+
+// MUSIC PLAYER
+// Music starts only after the visitor clicks the button.
+musicBtn.addEventListener("click", async () => {
+  if (bgm.paused) {
+    musicBtn.textContent = "Loading music...";
+
+    try {
+      await bgm.play();
+      musicBtn.textContent = "♫ Pause music";
+    } catch (error) {
+      musicBtn.textContent = "Couldn't play music — tap to retry";
+      console.error("Music playback error:", error);
+    }
+  } else {
+    bgm.pause();
+    musicBtn.textContent = "♡ Play music";
+  }
+});
+
+bgm.addEventListener("playing", () => {
+  musicBtn.textContent = "♫ Pause music";
+});
+
+bgm.addEventListener("pause", () => {
+  musicBtn.textContent = "♡ Play music";
+});
+
+bgm.addEventListener("error", () => {
+  musicBtn.textContent = "Music file not found — check bgm.mp3";
+  console.error("Could not load ./bgm.mp3. Check the filename and GitHub upload.");
+});
+
+// LETTER OPEN / CLOSE
+const letterBtn = document.getElementById("letterBtn");
+const letterContent = document.getElementById("letterContent");
+
+letterBtn.addEventListener("click", () => {
+  const isOpen = letterContent.classList.toggle("open");
+
+  letterBtn.textContent = isOpen
+    ? "Close your letter ♡"
+    : "Open your letter ♡";
+
+  if (isOpen) {
+    setTimeout(() => {
+      letterContent.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }, 100);
+  }
+});
+
+// RESPECTFUL RESPONSE BUTTONS
+// These display messages only. They don't send or store responses.
+const choiceMessage = document.getElementById("choice-message");
+
+document.getElementById("talkBtn").addEventListener("click", () => {
+  choiceMessage.textContent =
+    "Thank you for being willing to talk. I'll listen, honestly and patiently. ♡";
+});
+
+document.getElementById("timeBtn").addEventListener("click", () => {
+  choiceMessage.textContent =
+    "Take the time you need. I respect your feelings and your space. ♡";
+});
+
+// SCROLL PROGRESS
+function updateProgress() {
+  const scrollable =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const percent = scrollable > 0
+    ? (window.scrollY / scrollable) * 100
+    : 0;
+
+  document.getElementById("progress").style.width =
+    Math.min(100, percent) + "%";
+}
+
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+// GENTLE FLOATING HEARTS
+// No images or image files are used.
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
+
+function createHeart() {
+  if (reducedMotion.matches || document.hidden) return;
+
+  const heart = document.createElement("span");
+  heart.className = "floating-heart";
+  heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 15) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 7500);
+}
+
+if (!reducedMotion.matches) {
+  setInterval(createHeart, 1100);
+}
+</script>
+
+</body>
+</html>
